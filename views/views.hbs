@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+        table,th,tr,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+    <title>views</title>
+</head>
+<body class="p-3 mb-2 bg-secondary text-white">
+    <div class="container">
+      <div class="menu">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzxI58k2b00Z1-TEK6IE_TRFIYgFFwLp8kvGzzknojrBezrS7QmZVxDgM_oirmpRtDD_M&usqp=CAU" width="100px" height="100px"></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://www.facebook.com/vuong.thanh.5891004/">contact</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    </div>
+     <h1>Views page</h1>
+    <table class="table table-dark table-striped">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Picture</th>
+        </tr>
+        {{#each products}}
+        <tr>
+            <td>{{_id}}</td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td><img src="{{picURL}}" width="300" height="200" </td>
+        </tr>
+        {{/each}}
+    </table>
+    </div>
+</body>
+
+</html>
