@@ -47,6 +47,7 @@
             <div class="mb-3">
                 <label class="form-label" for="txtPrice"> Price</label>
                 <input type="text" class="form-control" name="txtPrice" id="txtPrice">
+                <span style="color: red;">{{pricError}}</span>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="txtURL"> Picture</label>
@@ -74,10 +75,11 @@
             <td>{{price}}</td>
             <td><img src="{{picURL}}" width="300" height="200" </td>
             <td><a href="/edit/{{_id}}">edit</a></td>
-            <td><a onclick="return confirm('are you want to delete')" href="/delete/{{_id}}">delete</a></td>
+            <td><a onclick="return confirm('are you want to delete')"  href="/delete/{{_id}}">delete</a></td>
         </tr>
         {{/each}}
     </table>
+    <div>{{now}}</div>
 </div> 
 </body>
 
