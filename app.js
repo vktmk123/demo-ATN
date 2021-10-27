@@ -10,6 +10,17 @@ app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist
 app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
 app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 
+
+function formatDate(date){
+    return new Date(date).toLocaleString("vi-VN")
+}
+
+app.get('/', async (req, res) => {
+    var result = await getAll("Products")
+    var time = new Date().toISOString()
+    res.render('home', { products: result, now:formatDate(time)})
+})
+
 app.get('/',async(req,res)=>{
     var result = await getAll("Products")//Product from NoSQL
     res.render('home',{products:result})
